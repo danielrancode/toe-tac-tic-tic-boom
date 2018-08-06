@@ -1,0 +1,27 @@
+
+/* div {
+  border: 1px solid black
+} */
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content:center; */
+
+}
+
+.countdown {
+  border: 1px solid black;
+  flex: 0 0 33%;
+  height: 200px;
+  /* background-color: #999; */
+}
+
+p {
+  font-size: 70px;
+  text-align: center;
+}
+
+.clicked {
+  border: 5px solid red 
+}
