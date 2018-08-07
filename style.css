@@ -18,10 +18,67 @@
 }
 
 p {
-  font-size: 70px;
-  text-align: center;
+  /* margin: 0;
+  border: black solid 1px;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+  position: absolute; */
+  /* margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 10%;
+  margin-bottom: 10%; */
+  /* text-align: auto; */
 }
 
 .clicked {
-  border: 5px solid red 
+  border: 5px solid red
+}
+
+.n10 {
+  font-size: 70px;
+  color: #318E27
+}
+
+.n9 {
+  font-size: 75px;
+  color: #318E27
+}
+
+.n8 {
+  font-size: 80px;
+  color: #7B9E2B
+}
+.n7 {
+  font-size: 85px;
+  color: #C1CD22
+}
+.n6 {
+  font-size: 90px;
+  color: #F5F544
+}
+.n5 {
+  font-size: 95px;
+  color: #FF8000
+}
+.n4 {
+  font-size: 100px;
+  color: #FF8000
+}
+.n3 {
+  font-size: 105px;
+  color: #FF4D00
+}
+.n2 {
+  font-size: 110px;
+  color: #FF0000
+}
+.n1 {
+  font-size: 115px;
+  color: #FF0000
+}
+.n0 {
+  font-size: 140px;
+  color: #660066
 }

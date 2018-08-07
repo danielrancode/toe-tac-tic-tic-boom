@@ -1,11 +1,11 @@
 
 
-// return random number from 1 to n
+// random integer from 1 to n
 function randTo(n) {
   return Math.floor((Math.random() * n)) + 1
 }
 
-// return array of random length (1..9) each element is unique random number (1..9)
+// array of random length (1..9), each element is unique random integer (1..9)
 function selectRandomNums(howMany) {
   let numArr = [1,2,3,4,5,6,7,8,9]
   let selected = []
@@ -17,16 +17,19 @@ function selectRandomNums(howMany) {
   return selected
 }
 
-// return countdown
+// countdown
 function CountDown(id) {
-  let x = 10
+  let count = 10
+  let cell = document.getElementById(id)
 
   return setInterval(function() {
-    if (x == 0) {
-      document.getElementById(id).innerHTML = `<p>B${x}${x}M!</p>`
+    if (count == 0) {
+      cell.innerHTML = `<p>B${count}${count}M!</p>`
+      cell.className = `countdown n${count}`;
     } else {
-      document.getElementById(id).innerHTML = `<p>${x}</p>`
-      x -= 1
+      cell.innerHTML = `<p>${count}</p>`;
+      cell.className = `countdown n${count}`;
+      count -= 1
       }
     }, 1000);
 }
