@@ -3,6 +3,11 @@
   border: 1px solid black
 } */
 
+.game-name {
+  text-align: center;
+  background-color: yellow
+}
+
 .grid {
   display: flex;
   flex-wrap: wrap;
@@ -10,27 +15,45 @@
 
 }
 
-.countdown {
-  border: 1px solid black;
+.cell {
+  border: 1px dotted red;
   flex: 0 0 33%;
   height: 200px;
-  /* background-color: #999; */
+  width: 200px;
+  /* POSITIONING: */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* ALTERNATIVELY: */
+  /* position: relative */
 }
 
-p {
-  /* margin: 0;
+.countdown {
+  border: 1px dotted green;
+  /* POSITIONING: */
+  margin: 0;
+  /* ALTERNATIVELY: */
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%) */
+}
+
+/* p {
+  margin: 0;
   border: black solid 1px;
   top: 50%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%)
-  position: absolute; */
-  /* margin-left: 10%;
+  position: absolute;
+  margin-left: 10%;
   margin-right: 10%;
   margin-top: 10%;
-  margin-bottom: 10%; */
-  /* text-align: auto; */
-}
+  margin-bottom: 10%;
+  text-align: center;
+} */
 
 .clicked {
   border: 5px solid red

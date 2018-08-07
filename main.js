@@ -24,10 +24,10 @@ function CountDown(id) {
 
   return setInterval(function() {
     if (count == 0) {
-      cell.innerHTML = `<p>B${count}${count}M!</p>`
+      cell.innerHTML = `B${count}${count}M!`
       cell.className = `countdown n${count}`;
     } else {
-      cell.innerHTML = `<p>${count}</p>`;
+      cell.innerHTML = `${count}`;
       cell.className = `countdown n${count}`;
       count -= 1
       }
