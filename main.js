@@ -18,8 +18,8 @@ function selectRandomNums(howMany) {
 }
 
 // countdown
-function CountDown(id) {
-  let count = 10
+function CountDown(id, initialNum) {
+  let count = initialNum
   let cell = document.getElementById(id)
 
   return setInterval(function() {
@@ -31,7 +31,7 @@ function CountDown(id) {
       cell.className = `countdown n${count}`;
       count -= 1
       }
-    }, 1000);
+    }, 200);
 }
 
 // generate random number (1..n) of countdowns (default: n = 9)
@@ -40,7 +40,7 @@ function generateCountdowns(n = randTo(9)) {
 
   selectedIds.forEach((id) => {
     setTimeout(() => {
-                      CountDown((id), 1000);
+                      CountDown(id, 5);
                       document.getElementById(id).addEventListener("click", addClass);
                       },
               randTo(3000)

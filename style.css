@@ -1,59 +1,29 @@
-
-/* div {
-  border: 1px solid black
-} */
-
 .game-name {
   text-align: center;
   background-color: yellow
 }
 
 .grid {
-  display: flex;
-  flex-wrap: wrap;
-  /* justify-content:center; */
 
-}
+    /* border: 1px dotted red; */
 
-.cell {
-  border: 1px dotted red;
-  flex: 0 0 33%;
-  height: 200px;
-  width: 200px;
-  /* POSITIONING: */
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 350px);
+  column-gap: 10px;
+  grid-auto-rows: 250px;
+  row-gap: 10px;
   justify-content: center;
-  /* ALTERNATIVELY: */
-  /* position: relative */
 }
 
 .countdown {
-  border: 1px dotted green;
-  /* POSITIONING: */
-  margin: 0;
-  /* ALTERNATIVELY: */
-  /* position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%) */
-}
 
-/* p {
+  /* border: 1px dotted green; */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0;
-  border: black solid 1px;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%)
-  position: absolute;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-top: 10%;
-  margin-bottom: 10%;
-  text-align: center;
-} */
+}
 
 .clicked {
   border: 5px solid red
@@ -102,6 +72,6 @@
   color: #FF0000
 }
 .n0 {
-  font-size: 140px;
+  font-size: 120px;
   color: #660066
 }
