@@ -1,12 +1,26 @@
 
 
-
+// return random number from 1 to n
 function randTo(n) {
   return Math.floor((Math.random() * n)) + 1
 }
 
+// return array of random length (1..9) each element is unique random number (1..9)
+function selectRandomNums(howMany) {
+  let numArr = [1,2,3,4,5,6,7,8,9]
+  let selected = []
+
+  for (x = 1; x <= howMany; x++) {
+    let num = numArr.splice(randTo(numArr.length - 1), 1)
+    selected.push(num[0])
+  }
+  return selected
+}
+
+// return countdown
 function CountDown(id) {
   let x = 10
+
   return setInterval(function() {
     if (x == 0) {
       document.getElementById(id).innerHTML = `<p>B${x}${x}M!</p>`
@@ -17,17 +31,18 @@ function CountDown(id) {
     }, 1000);
 }
 
+// generate random number (1..n) of countdowns (default: n = 9)
 function generateCountdowns(n = randTo(9)) {
-  i = 0
-  for (c = 1; c <= n; c++) {
-    setTimeout(
-      () => {
-        i++;
-        CountDown((i), 1000);
-        document.getElementById(i).addEventListener("click", addClass);
-        }, randTo(3000));
-    // i++;
-  }
+  let selectedIds = selectRandomNums(n)
+
+  selectedIds.forEach((id) => {
+    setTimeout(() => {
+                      CountDown((id), 1000);
+                      document.getElementById(id).addEventListener("click", addClass);
+                      },
+              randTo(3000)
+    )
+  })
 }
 
 function addClass(e) {
