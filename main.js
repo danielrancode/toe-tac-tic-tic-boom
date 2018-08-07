@@ -31,7 +31,7 @@ function CountDown(id, initialNum) {
       cell.className = `countdown n${count}`;
       count -= 1
       }
-    }, 200);
+    }, 1000);
 }
 
 // generate random number (1..n) of countdowns (default: n = 9)
@@ -40,7 +40,7 @@ function generateCountdowns(n = randTo(9)) {
 
   selectedIds.forEach((id) => {
     setTimeout(() => {
-                      CountDown(id, 5);
+                      CountDown(id, 10);
                       document.getElementById(id).addEventListener("click", addClass);
                       },
               randTo(3000)

@@ -23,6 +23,7 @@
   align-items: center;
   justify-content: center;
   margin: 0;
+  transition: color 1s
 }
 
 .clicked {
@@ -41,7 +42,7 @@
 
 .n8 {
   font-size: 80px;
-  color: #7B9E2B
+  color: #7B9E2B;
 }
 .n7 {
   font-size: 85px;
@@ -53,7 +54,7 @@
 }
 .n5 {
   font-size: 95px;
-  color: #FF8000
+  color: #FF8000;
 }
 .n4 {
   font-size: 100px;
