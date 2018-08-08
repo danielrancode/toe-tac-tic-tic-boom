@@ -22,16 +22,23 @@ function CountDown(id, initialNum) {
   let count = initialNum
   let cell = document.getElementById(id)
 
-  return setInterval(function() {
-    if (count == 0) {
-      cell.innerHTML = `B${count}${count}M!`
-      cell.className = `countdown n${count}`;
-    } else {
-      cell.innerHTML = `${count}`;
-      cell.className = `countdown n${count}`;
-      count -= 1
-      }
-    }, 1000);
+  return function() {
+
+    let cd = setInterval(function() {
+      if (count == 0) {
+        cell.innerHTML = `B${count}${count}M!`
+        cell.className = `countdown n${count}`;
+
+            // if (cell.innerHTML == `B${count}${count}M!`)
+              clearInterval(cd)
+
+      } else {
+        cell.innerHTML = `${count}`;
+        cell.className = `countdown n${count}`;
+        count -= 1
+        }
+      }, 1000);
+  }()
 }
 
 // generate random number (1..n) of countdowns (default: n = 9)
