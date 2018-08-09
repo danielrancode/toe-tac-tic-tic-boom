@@ -23,7 +23,7 @@ function selectRandomNums(howMany) {
 }
 
 // countdown
-function CountDown(id, initialNum) {
+function CountDown(id, initialNum, interval) {
   let count = initialNum
   let cell = document.getElementById(id)
 
@@ -40,17 +40,17 @@ function CountDown(id, initialNum) {
         cell.className = `countdown n${count}`;
         count -= 1
         }
-      }, 500);
+      }, interval);
   }()
 }
 
 // generate random number (1..n) of countdowns (default: n = 9)
-function generateCountdowns(n = randFromOneTo(9)) {
+function generateCountdowns(n = randFromOneTo(9), interval) {
   let selectedIds = selectRandomNums(n)
 
   selectedIds.forEach((id) => {
     setTimeout(() => {
-                      CountDown(id, 10);
+                      CountDown(id, 10, interval);
                       // document.getElementById(id).addEventListener("click", addClass);
                       },
               randFromOneTo(500)
@@ -65,4 +65,10 @@ function addClass(e) {
 // const countdowns = Array.from(document.querySelectorAll('.countdown'));
 // countdowns.forEach(countdown => countdown.addEventListener("click", addClass));
 
-generateCountdowns()
+generateCountdowns(5, 500)
+
+
+// function runGame(level) {
+//   let countdown = 0
+//
+// }
