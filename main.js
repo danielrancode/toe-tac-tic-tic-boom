@@ -78,4 +78,6 @@ function runSingleGame(level) {
 
 runSingleGame(1)
 
-runMultiLevelGame
+// runMultiLevelGame(startingLevel) {
+//
+// }
