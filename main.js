@@ -45,7 +45,8 @@ function CountDown(id, initialNum, interval) {
 }
 
 // generate random number (1..n) of countdowns (default: n = 9)
-function generateCountdowns(n = randFromOneTo(9), interval) {
+function generateCountdowns(interval) {
+  n = randFromOneTo(9)
   let selectedIds = selectRandomNums(n)
 
   selectedIds.forEach((id) => {
@@ -65,10 +66,16 @@ function addClass(e) {
 // const countdowns = Array.from(document.querySelectorAll('.countdown'));
 // countdowns.forEach(countdown => countdown.addEventListener("click", addClass));
 
-generateCountdowns(5, 500)
+// generateCountdowns(5, 500)
 
 
-// function runGame(level) {
-//   let countdown = 0
-//
-// }
+function runSingleGame(level) {
+  let header = document.getElementById("game-name")
+  header.innerHTML = `ToeTacTicTicBoom!! Level: ${level}`
+  interval = 1000 - (level * 100)
+  generateCountdowns(interval)
+}
+
+runSingleGame(1)
+
+runMultiLevelGame
