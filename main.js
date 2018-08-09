@@ -1,15 +1,13 @@
 
 
 // random integer from 1 to n
-function randTo(n) {
+function randFromOneTo(n) {
   return Math.floor((Math.random() * n)) + 1
 }
 
 function randFromZeroTo(n) {
   return Math.round((Math.random() * n))
 }
-
-
 
 // array of random length (1..9), each element is unique random integer (1..9)
 function selectRandomNums(howMany) {
@@ -33,15 +31,12 @@ function CountDown(id, initialNum) {
 
     let cd = setInterval(function() {
       if (count == 0) {
-        console.log(`id = ${id}, cell = ${cell}`)
         cell.innerHTML = `B${count}${count}M!`
         cell.className = `countdown n${count}`;
         clearInterval(cd)
 
       } else {
-        console.log(`id = ${id}, cell = ${cell}`)
         cell.innerHTML = `${count}`;
-        // debugger
         cell.className = `countdown n${count}`;
         count -= 1
         }
@@ -50,18 +45,15 @@ function CountDown(id, initialNum) {
 }
 
 // generate random number (1..n) of countdowns (default: n = 9)
-function generateCountdowns(n = randTo(9)) {
+function generateCountdowns(n = randFromOneTo(9)) {
   let selectedIds = selectRandomNums(n)
-  // let selectedIds = [1,2,3,4,5,6,7,8,9]
-
-  console.log(selectedIds)
 
   selectedIds.forEach((id) => {
     setTimeout(() => {
                       CountDown(id, 10);
                       // document.getElementById(id).addEventListener("click", addClass);
                       },
-              randTo(500)
+              randFromOneTo(500)
     )
   })
 }
