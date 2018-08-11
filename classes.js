@@ -26,7 +26,9 @@ class Game {
       let info = document.getElementById('game-name')
       info.innerHTML = `Toe Tac Tic Tic Boom ! ! !<br>Player:${this.multiGame.playerName}<br> Level: ${this.level}`
         if (this.attackCount < 2) {
-            this.attack()
+          let attack = new Attack(this)
+          attack.run()
+            // this.attack()
             this.attackCount++
         } else {
           info.innerHTML = `Level ${this.level} Done!`
@@ -36,43 +38,43 @@ class Game {
         }
     }
 
-    attack(maxInterval = 3000, bombCount = randFromOneTo(9)) {
-      let ids = selectRandomNums(bombCount)
-
-      ids.forEach((id) => {
-        setTimeout(() => {
-                          let bomb = new Bomb(id, 3, 1000);
-                          bomb.run()
-                          },
-                  randFromOneTo(maxInterval)
-        )
-      })
-    }
+    // attack(maxInterval = 3000, bombCount = randFromOneTo(9)) {
+    //   let ids = selectRandomNums(bombCount)
+    //
+    //   ids.forEach((id) => {
+    //     setTimeout(() => {
+    //                       let bomb = new Bomb(id, 3, 1000);
+    //                       bomb.run()
+    //                       },
+    //               randFromOneTo(maxInterval)
+    //     )
+    //   })
+    // }
 
 }
 
 
 
 // ******** Attack ******** //
-// class Attack {
-//     constructor(maxInterval = 3000, bombCount = randFromOneTo(9)) {
-//       this.maxInterval = maxInterval
-//       this.bombCount = bombCount
-//       this.ids = selectRandomNums(bombCount)
-//     }
-//
-//     run() {
-//       this.ids.forEach((id) => {
-//         setTimeout(() => {
-//                           let bomb = new Bomb(id, 3, 1000);
-//                           bomb.run()
-//                           },
-//                   randFromOneTo(this.maxInterval)
-//         )
-//       })
-//     }
-//
-//   }
+class Attack {
+    constructor(game, maxInterval = 3000, bombCount = randFromOneTo(9)) {
+      this.maxInterval = maxInterval
+      this.bombCount = bombCount
+      this.ids = selectRandomNums(bombCount)
+    }
+
+    run() {
+      this.ids.forEach((id) => {
+        setTimeout(() => {
+                          let bomb = new Bomb(id, 3, 1000);
+                          bomb.run()
+                          },
+                  randFromOneTo(this.maxInterval)
+        )
+      })
+    }
+
+  }
 
 
 // ******** Bomb ******** //
