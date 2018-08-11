@@ -3,12 +3,13 @@
 class MultiGame {
   constructor(playerName = 'Akiva Frederick Hastings Foss Feig Entin Rein') {
     this.playerName = playerName
+    this.currentLevel = 1
   }
 
   run() {
-    let level = 1
-    let game = new Game(this, level)
+    let game = new Game(this, this.currentLevel)
     game.run()
+    this.currentLevel++
   }
 }
 
@@ -106,7 +107,7 @@ class Bomb {
                                 nodes[i].innerHTML = ''
                               }
                               // bombs = []
-                              main()
+                              this.attack.game.multiGame.run()
                             }, 1000
                     )
           }
