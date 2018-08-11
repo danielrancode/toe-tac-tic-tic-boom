@@ -58,15 +58,17 @@ class Game {
 // ******** Attack ******** //
 class Attack {
     constructor(game, maxInterval = 3000, bombCount = randFromOneTo(9)) {
+      this.game = game
       this.maxInterval = maxInterval
       this.bombCount = bombCount
       this.ids = selectRandomNums(bombCount)
     }
 
     run() {
+      // console.log(`this.game.multiGame.playerName = ${this.game.multiGame.playerName}`)
       this.ids.forEach((id) => {
         setTimeout(() => {
-                          let bomb = new Bomb(id, 3, 1000);
+                          let bomb = new Bomb(this, id, 3, 1000);
                           bomb.run()
                           },
                   randFromOneTo(this.maxInterval)
@@ -82,7 +84,8 @@ class Attack {
 
 class Bomb {
 
-  constructor(id, startAt = 10, interval = 1000) {
+  constructor(attack, id, startAt = 10, interval = 1000) {
+    this.attack = attack
     this.id = id
     this.startAt = startAt
     this.interval = interval
