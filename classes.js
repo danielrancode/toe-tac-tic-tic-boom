@@ -1,31 +1,35 @@
-// ******** MultiGame ********
+// ******** Game ********
 
-class MultiGame {
-  constructor(playerName = 'Akiva Frederick Hastings Foss Feig Entin Rein') {
+class Game {
+  constructor(playerName = 'Akiva Frederick Hastings Foss Feig Entin Zigman Bernatth McDonald Moskowich Rein') {
     this.playerName = playerName
     this.currentLevel = 1
   }
 
   run() {
-    let game = new Game(this, this.currentLevel)
-    game.run()
-    this.currentLevel++
+    if (this.currentLevel > 10) {
+      info.innerHTML = "Game OVER!!!"
+    } else {
+      let round = new Round(this, this.currentLevel)
+      round.run()
+      this.currentLevel++
+    }
   }
 }
 
-// ******** Game ********
+// ******** Round ********
 
-class Game {
-    constructor(multiGame, level) {
-      this.multiGame = multiGame
+class Round {
+    constructor(game, level) {
+      this.game = game
       this.level = level
       this.attackCount = 0
       this.bombs = []
     }
 
     run() {
-      let info = document.getElementById('game-name')
-      info.innerHTML = `Toe Tac Tic Tic Boom ! ! !<br>Player:${this.multiGame.playerName}<br> Level: ${this.level}`
+      // let info = document.getElementById('game-name')
+      info.innerHTML = `Toe Tac Tic Tic Boom ! ! !<br>Player:${this.game.playerName}<br> Level: ${this.level}`
         if (this.attackCount < 2) {
           let attack = new Attack(this)
           attack.run()
@@ -58,18 +62,18 @@ class Game {
 
 // ******** Attack ******** //
 class Attack {
-    constructor(game, maxInterval = 3000, bombCount = randFromOneTo(9)) {
-      this.game = game
+    constructor(round, maxInterval = 500, bombCount = randFromOneTo(9)) {
+      this.round = round
       this.maxInterval = maxInterval
       this.bombCount = bombCount
       this.ids = selectRandomNums(bombCount)
     }
 
     run() {
-      // console.log(`this.game.multiGame.playerName = ${this.game.multiGame.playerName}`)
+      // console.log(`this.round.game.playerName = ${this.round.game.playerName}`)
       this.ids.forEach((id) => {
         setTimeout(() => {
-                          let bomb = new Bomb(this, id, 3, 1000);
+                          let bomb = new Bomb(this, id, 10, 100);
                           bomb.run()
                           },
                   randFromOneTo(this.maxInterval)
@@ -107,8 +111,8 @@ class Bomb {
                                 nodes[i].innerHTML = ''
                               }
                               // bombs = []
-                              this.attack.game.multiGame.run()
-                            }, 1000
+                              this.attack.round.game.run()
+                            }, 200
                     )
           }
       } else {
@@ -129,7 +133,7 @@ class Bomb {
 //   }
 // }
 //
-// class MultiGame {
+// class Game {
 //   constructor(player) {
 //     this.player = player
 //   }

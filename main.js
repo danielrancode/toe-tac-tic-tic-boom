@@ -1,7 +1,8 @@
 function main() {
-  let multiGame = new MultiGame
-  multiGame.run()
+  let newGame = new Game
+  newGame.run()
 }
 
+let info = document.getElementById('game-name')
 let nodes = document.getElementById("grid").getElementsByTagName('div')
 main()
