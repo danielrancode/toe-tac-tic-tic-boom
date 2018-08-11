@@ -7,12 +7,19 @@ class Game {
     }
 
     run() {
+      let info = document.getElementById('game-name')
+      info.innerHTML = `Toe Tac Tic Tic Boom ! ! !       Level: ${this.level}`
         if (attackCount < 2) {
             let attack = new Attack
             attackCount++
             attack.run()
         } else {
-          document.body.innerHTML = "<h1>Done!</h1>"
+          info.innerHTML = "Done!"
+          setTimeout(() => {
+            attackCount = 0
+            bombs = []
+            run()
+          }, 2000)
         }
     }
 }
