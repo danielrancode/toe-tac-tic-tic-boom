@@ -28,7 +28,8 @@ class Round {
     }
 
     run() {
-      info.innerHTML = `Toe Tac Tic Tic Boom ! ! !<br>Player:${this.game.player}<br> Level: ${this.level}<br>Attacks left: ${this.attacksLeft}`
+      // display info
+      // info.innerHTML = `Toe Tac Tic Tic Boom ! ! !<br>Player:${this.game.player}<br> Level: ${this.level}<br>Attacks left: ${this.attacksLeft}<br>bombs count: ${this.bombs.length}`
         if (this.attacksLeft > 0) {
           let attack = new Attack(this)
           attack.run()
@@ -56,6 +57,8 @@ class Attack {
     }
 
     run() {
+      // display info
+      // info.innerHTML = `Toe Tac Tic Tic Boom ! ! !<br>Player:${this.round.game.player}<br> Level: ${this.round.level}<br>Attacks left: ${this.round.attacksLeft}<br>bombs count: ${this.bombs.length}`
       this.ids.forEach((id) => {
         setTimeout(() => {
                           let bomb = new Bomb(this, id, 10, 100);
@@ -80,6 +83,9 @@ class Bomb {
   }
 
   run() {
+    // display info
+    info.innerHTML = `Toe Tac Tic Tic Boom ! ! !<br>Player:${this.attack.round.game.player}<br> Level: ${this.attack.round.level}<br>Attacks left: ${this.attack.round.attacksLeft}<br>bombs count: ${this.attack.bombs.length}`
+
     let count = this.startAt
     let cell = document.getElementById(this.id)
     let countDown = setInterval(() => {
