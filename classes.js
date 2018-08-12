@@ -1,7 +1,7 @@
 // ******** Game (generates Rounds) ********
 
 class Game {
-  constructor(level = 1, player = 'Akiva Frederick Rein') { //Hastings Foss Feig Entin Zigman Bernatth McDonald Moskowich
+  constructor(level = 1, player = 'Akiva Frederick Rein') { //Hastings Foss-Feig Entin Zigman Bernatth McDonald Moskowich
     this.player = player
     this.currentLevel = level
   }
@@ -21,10 +21,10 @@ class Game {
 // ******** Round (generates Attacks) ********
 
 class Round {
-    constructor(game, level) {
+    constructor(game, level, attacksLeft = 1) {
       this.game = game
       this.level = level
-      this.attacksLeft = 3
+      this.attacksLeft = attacksLeft
     }
 
     run() {
