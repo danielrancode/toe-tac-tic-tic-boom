@@ -1,7 +1,7 @@
 // ******** Game (generates Rounds) ********
 
 class Game {
-  constructor(level = 1, player = 'Akiva Frederick Rein') {
+  constructor(level = 1, player = 'Akiva Frederick Rein') { //Hastings Foss-Feig Entin Zigman Bernatth McDonald Moskowich
     this.player = player
     this.currentLevel = level
   }
@@ -85,14 +85,9 @@ class Bomb {
   run() {
     let count = this.startAt
     let cell = document.getElementById(this.id)
-    cell.addEventListener('click', () => {
-      cell.innerHTML = `Neut`
-      clearInterval(countDown)
-      this.neutralize()
-    })
     let countDown = setInterval(() => {
       if (count == 0) {
-          cell.innerHTML = `B${count}${count}M!`
+          cell.innerHTML = `BOOM!`
           cell.className = `bomb n${count}`;
           clearInterval(countDown)
           if (isAttackCompleted()) {
@@ -111,17 +106,7 @@ class Bomb {
         }
       }, this.interval);
   }
+}
 
-  neutralize() {
-    if (isAttackCompleted()) {
-      setTimeout(() => {
-                        for (let i = 0; i < nodes.length; i++) {
-                          nodes[i].innerHTML = ''
-                        }
-                        this.attack.round.run()
-                        },
-                      200)
-                    }
 
-  }
 }

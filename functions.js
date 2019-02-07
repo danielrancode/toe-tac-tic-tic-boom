@@ -25,7 +25,7 @@ function selectRandomNums(howMany) {
 function isAttackCompleted() {
   let done = true
   for (let i = 0; i < nodes.length; i++) {
-    if (nodes[i].className !== 'bomb n0') { done = false }
+    if (nodes[i].className !== 'bomb n0' && nodes[i].innerHTML !== 'Neut' ) { done = false }
   }
   return done
 }
