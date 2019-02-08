@@ -22,10 +22,10 @@ function selectRandomNums(howMany) {
   return selected
 }
 
-function isAttackCompleted() {
-  let done = true
-  for (let i = 0; i < nodes.length; i++) {
-    if (nodes[i].className !== 'bomb n0' && nodes[i].innerHTML !== 'Neut' ) { done = false }
-  }
-  return done
-}
+// function isAttackCompleted() {
+//   let done = true
+//   for (let i = 0; i < nodes.length; i++) {
+//     if (nodes[i].className !== 'bomb n0' && nodes[i].innerHTML !== 'Neut' ) { done = false }
+//   }
+//   return done
+// }
